@@ -1,7 +1,7 @@
 FROM pytorch/pytorch:latest
 
 RUN /opt/conda/bin/conda install -y tensorflow pandas scikit-learn matplotlib seaborn jupyter && \
-	/opt/conda/bin/conda install -c conda-forge tensorboardx && \
+    /opt/conda/bin/conda install -c conda-forge tensorboardx && \
     /opt/conda/bin/conda clean -ya
 
 RUN mkdir -p /home/me && chmod 1777 /home/me
