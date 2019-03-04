@@ -6,6 +6,8 @@ RUN /opt/conda/bin/conda install -y nodejs tensorflow pandas scikit-learn matplo
 
 RUN jupyter labextension install jupyterlab_tensorboard
 
+RUN pip install --user jupyter_tensorboard
+
 RUN mkdir -p /home/me && chmod 1777 /home/me
 
 ENV HOME /home/me
