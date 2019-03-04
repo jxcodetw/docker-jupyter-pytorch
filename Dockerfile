@@ -1,6 +1,6 @@
 FROM pytorch/pytorch:latest
 
-RUN /opt/conda/bin/conda install -y tensorflow pandas scikit-learn matplotlib seaborn jupyter jupyterlab && \
+RUN /opt/conda/bin/conda install -y nodejs tensorflow pandas scikit-learn matplotlib seaborn jupyter jupyterlab && \
     /opt/conda/bin/conda install -c conda-forge tensorboardx && \
     /opt/conda/bin/conda clean -ya
 
