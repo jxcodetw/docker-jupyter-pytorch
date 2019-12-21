@@ -1,6 +1,13 @@
 FROM pytorch/pytorch:latest
 
-RUN /opt/conda/bin/conda install -y nodejs Cython tensorflow pandas scikit-learn matplotlib seaborn jupyter jupyterlab && \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+         libsm6 \
+         libxext6 \
+         libxrender-dev \
+         ffmpeg && \
+     rm -rf /var/lib/apt/lists/*
+
+RUN /opt/conda/bin/conda install -y nodejs opencv Cython tensorflow pandas scikit-learn matplotlib seaborn jupyter jupyterlab && \
     /opt/conda/bin/conda install -c conda-forge tensorboardx && \
     /opt/conda/bin/conda clean -ya
 
